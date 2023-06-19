@@ -27,4 +27,4 @@ const obj = {
 };
 
 console.log(obj.prop2[3]['property with spaces'].a.c.someProperty[0]['prop name']);  // I am a smart programmer
-console.log(obj.prop3().bar.anotherBeautifulProp[1].target); // It was simple!!
+console.log(obj.prop3().bar.anotherBeautifulProp[1].target); // It was simple!!!!
