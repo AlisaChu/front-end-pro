@@ -1,9 +1,9 @@
 //1. Display the numbers from 10 to 20 on the page in one line separated by commas.
-//let output = '';
-//for (let i = 10; i <= 20; i++) {
-//    output += i + ', ';
-//}
-//console.log(output.slice(0, -2));
+const numbers = [];
+for (let i = 10; i <= 20; i++) {
+    numbers.push(i);
+}
+console.log(numbers.join(', '));
 
 //2. Print the squares of numbers from 10 to 20.
 // for (let i = 10; i <= 20; i++) {
@@ -71,8 +71,8 @@
 // console.log(sum);
 
 //12. Print the complete multiplication table from 1 to 10.
-for (let i = 1; i <= 10; i++) {
-    for (let j = 1; j <= 10; j++) {
-        console.log(`${i} * ${j} = ${i * j}`);
-    }
-}
+//for (let i = 1; i <= 10; i++) {
+//  for (let j = 1; j <= 10; j++) {
+//       console.log(`${i} * ${j} = ${i * j}`);
+//  }
+//}
