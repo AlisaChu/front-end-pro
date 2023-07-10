@@ -1,35 +1,34 @@
 "use strict";
-class Calculator {
-    constructor(base) {
-        this.value = base;
-        this.originalBase = base;
-    }
 
-    add(num) {
+function Calculator(base) {
+    this.value = base;
+    this.originalBase = base;
+
+    this.add = function(num) {
         if (typeof num === 'number') {
             this.value += num;
         }
-    }
+    };
 
-    sub(num) {
+    this.sub = function(num) {
         if (typeof num === 'number') {
             this.value -= num;
         }
-    }
+    };
 
-    set(num) {
+    this.set = function(num) {
         if (typeof num === 'number') {
             this.value = num;
         }
-    }
+    };
 
-    get() {
+    this.get = function() {
         return this.value;
-    }
+    };
 
-    reset() {
+    this.reset = function() {
         this.value = this.originalBase;
-    }
+    };
 }
 
 const calc = new Calculator(100);
