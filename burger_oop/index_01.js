@@ -35,12 +35,11 @@ class Hamburger {
     }
 }
 
-// Define the sizes and toppings
+
 const SIZE_SMALL = new Hamburger('small', 50, 20);
 const TOPPING_MAYO = new Topping('mayo', 20, 5);
 const TOPPING_POTATO = new Topping('potato', 15, 10);
 
-// Create a new hamburger and add toppings
 const hamburger = new Hamburger(SIZE_SMALL.size, SIZE_SMALL.price, SIZE_SMALL.calories);
 hamburger.addTopping(TOPPING_MAYO);
 hamburger.addTopping(TOPPING_POTATO);
