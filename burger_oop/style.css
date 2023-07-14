@@ -1,0 +1,59 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#hamburger-form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#price-list {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    margin: auto;
+
+}
+
+#price-list h2 {
+    text-align: center;
+    color: #333;
+}
+
+#price-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#price-list ul li {
+    margin: 5px 0;
+}
+
+
+#result {
+    margin-top: 30px;
+    text-align: center;
+}
