@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Група студентів</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="student.js" type="module"></script>
+  <script src="group.js" type="module"></script>
+  <script src="index_01.js" type="module"></script>
+  <script src="polyfill.js" type="module"></script>
 </head>
 <body>
-$END$
+<div class="container">
+  <h1>Група студентів</h1>
+  <div class="form-group">
+    <label for="student-name">Ім'я студента:</label>
+    <input type="text" id="student-name" placeholder="Введіть ім'я студента">
+  </div>
+  <div class="form-group">
+    <label for="student-scores">Оцінки студента (через кому):</label>
+    <input type="text" id="student-scores" placeholder="Введіть оцінки студента">
+  </div>
+  <button id="add-student-btn">Додати студента</button>
+  <div class="student-list" id="student-list"></div>
+  <div class="group-average" id="group-average"></div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
