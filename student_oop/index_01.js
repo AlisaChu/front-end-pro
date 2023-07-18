@@ -1,51 +1,24 @@
-import Group from './group.js';
-import Student from './student.js';
-import './polyfill.js';
+import { Group } from './Group.js';
+import { Student } from './Student.js';
 
 const group = new Group();
-const studentListElement = document.getElementById('student-list');
-const groupAverageElement = document.getElementById('group-average');
-const studentNameInput = document.getElementById('student-name');
-const studentScoresInput = document.getElementById('student-scores');
-const addStudentBtn = document.getElementById('add-student-btn');
 
-addStudentBtn.addEventListener('click', function () {
-    const name = studentNameInput.value;
-    const scoresInput = studentScoresInput.value;
-    const scores = scoresInput.split(',').map(Number);
+group.addStudent(new Student('John', [10, 8]));
+group.addStudent(new Student('Alex', [10, 9]));
+group.addStudent(new Student('Bob', [6, 10]));
 
-    if (name && scores.length > 0) {
-        const student = new Student(name, scores);
-        group.addStudent(student);
-        renderStudent(student);
-        renderGroupAverage();
-        clearInputs();
-    }
-});
+console.log(group.students.length === 3);
+group.addStudent({}); // ignore adding invalid data
+console.log(group.students.length === 3);
 
-function renderStudent(student) {
-    const studentDiv = document.createElement('div');
-    studentDiv.classList.add('student');
+// Output the average score of the group
+console.log(group.getAverageMark() === (9 + 9.5 + 8) / 3);
 
-    const nameDiv = document.createElement('div');
-    nameDiv.classList.add('student-name');
-    nameDiv.textContent = student.name;
-
-    const averageMarkDiv = document.createElement('div');
-    averageMarkDiv.classList.add('average-mark');
-    averageMarkDiv.textContent = 'Средний балл: ' + student.getAverageMark().toFixed(2);
-
-    studentDiv.appendChild(nameDiv);
-    studentDiv.appendChild(averageMarkDiv);
-    studentListElement.appendChild(studentDiv);
+try {
+    group.students = [new Student('John', [10, 10, 5, 10])];
+} catch(e) {
+    console.log(e.message);
 }
 
-function renderGroupAverage() {
-    const average = group.getAverageMark().toFixed(2);
-    groupAverageElement.textContent = 'Среднее по группе: ' + average;
-}
+console.log(group.students.length === 3);
 
-function clearInputs() {
-    studentNameInput.value = '';
-    studentScoresInput.value = '';
-}
