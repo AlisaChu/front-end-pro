@@ -1,9 +1,6 @@
-"use strict";
-document.addEventListener('DOMContentLoaded', function() {
     let btn = document.getElementById('msgButton');
     let input = document.getElementById('msgInput');
     let todoList = document.getElementById('todoList');
-
     btn.addEventListener('click', function() {
         let text = input.value.trim();
 
@@ -24,4 +21,4 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
         }
     });
-});
+
