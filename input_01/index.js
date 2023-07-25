@@ -1,3 +1,9 @@
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const phoneNumberInput = document.getElementById('phoneNumber');
+const contactForm = document.getElementById('contactForm');
+const contactTableElement = document.getElementById('contactTable');
+
 class Contact {
     constructor(firstName, lastName, phoneNumber) {
         this.firstName = firstName;
@@ -5,68 +11,62 @@ class Contact {
         this.phoneNumber = phoneNumber;
     }
 }
-
 class ContactTable {
-    constructor(tableElementId) {
-        this.table = document.getElementById(tableElementId);
+    constructor(tableElement) {
+        this.table = tableElement;
     }
 
     addContact(contact) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${contact.firstName}</td>
-            <td>${contact.lastName}</td>
-            <td>${contact.phoneNumber}</td>
-            <td><button class="deleteBtn">Delete</button></td>
+        const rowHTML = `
+            <tr>
+                <td>${contact.firstName}</td>
+                <td>${contact.lastName}</td>
+                <td>${contact.phoneNumber}</td>
+                <td><button class="deleteBtn">Delete</button></td>
+            </tr>
         `;
-        this.table.appendChild(row);
-        this.table.dispatchEvent(new CustomEvent('contactAdded', {
-            detail: { contact }
-        }));
+        this.table.insertAdjacentHTML('beforeend', rowHTML);
     }
 
     deleteContact(buttonElement) {
-        buttonElement.parentElement.parentElement.remove();
+        const row = buttonElement.closest('tr');
+        if (row) {
+            row.remove();
+        }
     }
 }
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+const contactTable = new ContactTable(contactTableElement);
+
+contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const firstName = document.getElementById('firstName');
-    const lastName = document.getElementById('lastName');
-    const phoneNumber = document.getElementById('phoneNumber');
-
-    if (!isValidInput(firstName.value, lastName.value, phoneNumber.value)) {
+    if (!isValidInput(firstNameInput.value, lastNameInput.value, phoneNumberInput.value)) {
         alert('Error: Invalid inputs. Please check and try again.');
         return;
     }
 
-    const contact = new Contact(firstName.value, lastName.value, phoneNumber.value);
-    const contactTable = new ContactTable('contactTable');
+    const contact = new Contact(firstNameInput.value, lastNameInput.value, phoneNumberInput.value);
     contactTable.addContact(contact);
 
-    firstName.value = '';
-    lastName.value = '';
-    phoneNumber.value = '';
+    clearInputs();
 });
 
-document.getElementById('contactTable').addEventListener('click', function(event) {
+contactTableElement.addEventListener('click', function(event) {
     if (event.target.className === 'deleteBtn') {
-        const contactTable = new ContactTable('contactTable');
         contactTable.deleteContact(event.target);
     }
 });
-
-document.getElementById('contactTable').addEventListener('contactAdded', function(event) {
-    console.log(`New contact added: ${event.detail.contact.firstName} ${event.detail.contact.lastName} ${event.detail.contact.phoneNumber}`);
-});
-
-
 
 function isValidInput(firstName, lastName, phoneNumber) {
     if (firstName === '' || lastName === '' || phoneNumber === '' || isNaN(phoneNumber)) {
         return false;
     }
     return true;
+}
+function clearInputs() {
+    firstNameInput.value = '';
+    lastNameInput.value = '';
+    phoneNumberInput.value = '';
 }
