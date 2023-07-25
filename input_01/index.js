@@ -37,7 +37,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const lastName = document.getElementById('lastName');
     const phoneNumber = document.getElementById('phoneNumber');
 
-
     if (!isValidInput(firstName.value, lastName.value, phoneNumber.value)) {
         alert('Error: Invalid inputs. Please check and try again.');
         return;
@@ -46,7 +45,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const contact = new Contact(firstName.value, lastName.value, phoneNumber.value);
     const contactTable = new ContactTable('contactTable');
     contactTable.addContact(contact);
-
 
     firstName.value = '';
     lastName.value = '';
@@ -61,8 +59,10 @@ document.getElementById('contactTable').addEventListener('click', function(event
 });
 
 document.getElementById('contactTable').addEventListener('contactAdded', function(event) {
-    console.log(`New contact added: ${event.detail.contact.firstName} ${event.detail.contact.lastName}`);
+    console.log(`New contact added: ${event.detail.contact.firstName} ${event.detail.contact.lastName} ${event.detail.contact.phoneNumber}`);
 });
+
+
 
 function isValidInput(firstName, lastName, phoneNumber) {
     if (firstName === '' || lastName === '' || phoneNumber === '' || isNaN(phoneNumber)) {
