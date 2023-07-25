@@ -20,6 +20,9 @@ class ContactTable {
             <td><button class="deleteBtn">Delete</button></td>
         `;
         this.table.appendChild(row);
+        this.table.dispatchEvent(new CustomEvent('contactAdded', {
+            detail: { contact }
+        }));
     }
 
     deleteContact(buttonElement) {
@@ -40,7 +43,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         return;
     }
 
-
     const contact = new Contact(firstName.value, lastName.value, phoneNumber.value);
     const contactTable = new ContactTable('contactTable');
     contactTable.addContact(contact);
@@ -50,12 +52,18 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     lastName.value = '';
     phoneNumber.value = '';
 });
+
 document.getElementById('contactTable').addEventListener('click', function(event) {
     if (event.target.className === 'deleteBtn') {
         const contactTable = new ContactTable('contactTable');
         contactTable.deleteContact(event.target);
     }
 });
+
+document.getElementById('contactTable').addEventListener('contactAdded', function(event) {
+    console.log(`New contact added: ${event.detail.contact.firstName} ${event.detail.contact.lastName}`);
+});
+
 function isValidInput(firstName, lastName, phoneNumber) {
     if (firstName === '' || lastName === '' || phoneNumber === '' || isNaN(phoneNumber)) {
         return false;
