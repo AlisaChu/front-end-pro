@@ -47,3 +47,6 @@ body {
 #msgButton:hover {
     background-color: #45a049;
 }
+.green {
+    color: green;
+}

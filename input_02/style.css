@@ -1,47 +1,56 @@
 body {
+    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-form {
-    margin-bottom: 1em;
-}
-
-table {
+#todoList {
+    list-style-type: none;
+    padding: 0;
     width: 100%;
+    max-width: 600px;
 }
 
-th, td {
-    padding: 0.5em;
-    text-align: left;
+#todoList li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-td {
-    border-top: 1px solid #ddd;
-}
-
-button {
-    background-color: #8177bd;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.highlight {
+.green {
     background-color: green;
 }
 
-.container{
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 100px;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#msgInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#msgButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#msgButton:hover {
+    background-color: #45a049;
+}
+.green {
+    background-color: green;
 }
