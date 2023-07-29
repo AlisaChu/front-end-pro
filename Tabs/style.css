@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tabs {
+    width: 60%;
+}
+
+#tabs > nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+#tabs > div > div {
+    display: none;
+}
+
+#tabs > nav > button {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-right: 5px;
+    outline: none;
+}
+
+#tabs > nav > button.active,
+#tabs > div > div.active {
+    display: block;
+}
+
+#tabs > nav > button.active {
+    background-color: lightblue;
+}
