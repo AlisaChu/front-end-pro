@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+.green {
+    background-color: green;
+}
+
 #msgInput {
     width: 100%;
     max-width: 600px;
@@ -48,5 +52,5 @@ body {
     background-color: #45a049;
 }
 .green {
-    color: green;
+    background-color: green;
 }
