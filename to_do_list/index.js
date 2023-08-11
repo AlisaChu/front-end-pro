@@ -11,7 +11,7 @@ const ul = document.querySelector(UL_SELECTOR);
 form.addEventListener('submit', onFormSubmit);
 ul.addEventListener('click', onUlClick);
 
-// Загружаем список задач при загрузке страницы
+
 getTodoList()
   .then((list) => {
     renderTodoList(list);
