@@ -1,4 +1,4 @@
-function getFormData (formElements) {
+export function getFormData (formElements) {
   const data = {}
 
   for (const input of formElements) {
