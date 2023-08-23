@@ -1,7 +1,15 @@
-const API_URL = 'https://62054479161670001741b708.mockapi.io/api/contacts';
+const API_ENDPOINT = 'https://62054479161670001741b708.mockapi.io/api/contacts';
+
+function fetchContacts() {
+  return fetch(API_ENDPOINT)
+    .then(response => response.json())
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
 
 function addContact(contact) {
-  return fetch(API_URL, {
+  return fetch(API_ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -15,7 +23,7 @@ function addContact(contact) {
 }
 
 function updateContact(contact, id) {
-  return fetch(`${API_URL}/${id}`, {
+  return fetch(`${API_ENDPOINT}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -29,28 +37,15 @@ function updateContact(contact, id) {
 }
 
 function deleteContact(id) {
-  return fetch(`${API_URL}/${id}`, {
-    method: 'DELETE'
+  return fetch(`${API_ENDPOINT}/${id}`, {
+    method: 'DELETE',
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Failed to delete contact.');
       }
-      return response.json();
     })
     .catch(error => {
       console.error('Error deleting contact:', error);
     });
 }
-
-function fetchContacts() {
-  return fetch(API_URL)
-    .then(response => response.json())
-    .catch(error => {
-      console.error('Error fetching contacts:', error);
-    });
-}
-fetchContacts().then(contacts => {
-
-  console.log(contacts);
-});
