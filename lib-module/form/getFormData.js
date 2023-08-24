@@ -2,7 +2,7 @@ export function getFormData (formElements) {
   const data = {}
 
   for (const input of formElements) {
-    if (input.type === 'text') {
+    if (['text', 'hidden'].includes(input.type)) {
       data[input.id] = input.value
     }
   }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contacts</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="api.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="contacts.js" defer></script>
+
+</head>
+<body>
+<div id="notification" class="notification"></div>
+
+<form id="contactForm" class="form">
+    <input type="hidden"  name="id"             id="id"           class="formInput">
+    <input type="text"    name="firstName"      id="firstName"    class="formInput" />
+    <input type="text"    name="lastName"       id="lastName"     class="formInput" />
+    <input type="text"    name="phone"          id="phone"        class="formInput" />
+    <button type="submit">Save</button>
+
+</form>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+
+    <tbody id="contactContainer"></tbody>
+
+</table>
+
+</body>
+</html>
