@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hamburger Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+<h1>Welcome to Hamburger Shop!</h1>
+<div id="hamburger-form">
+  <h2>Customize your Hamburger</h2>
+  <label for="size">Choose a size:</label>
+  <select id="size">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+  </select>
+  <br>
+  <label>Add toppings:</label>
+  <br>
+  <input type="checkbox" id="cheese">Cheese
+  <input type="checkbox" id="salad">Salad
+  <input type="checkbox" id="potato">Potato
+  <input type="checkbox" id="seasoning">Seasoning
+  <input type="checkbox" id="mayo">Mayo
+  <br>
+  <button id="calculate">Calculate</button>
+</div>
+<div id="price-list">
+  <h2>Price & Calorie List</h2>
+  <p><strong>Size:</strong></p>
+  <ul>
+    <li>Small: $50, 20 calories</li>
+    <li>Medium: $75, 30 calories</li>
+    <li>Large: $100, 40 calories</li>
+  </ul>
+  <p><strong>Toppings:</strong></p>
+  <ul>
+    <li>Cheese: $10, 20 calories</li>
+    <li>Salad: $20, 5 calories</li>
+    <li>Potato: $15, 10 calories</li>
+    <li>Seasoning: $15, 0 calories</li>
+    <li>Mayo: $20, 5 calories</li>
+  </ul>
+</div>
+
+<div id="result">
+  <p id="price"></p>
+  <p id="calories"></p>
+</div>
+
+</body>
+</html>

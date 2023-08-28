@@ -1,0 +1,13 @@
+.formInput {
+    width: 100px;
+}
+
+.formInput.invalid {
+    border-color: red;
+}
+.notification {
+    display: none;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}

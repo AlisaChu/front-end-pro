@@ -1,0 +1,40 @@
+button {
+    padding: 15px 30px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    margin: 0 5px;
+}
+
+#tabs {
+    width: 30%;
+}
+
+#tabs > nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+#tabs > div > div {
+    display: none;
+}
+
+#tabs > nav > button {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-right: 5px;
+    outline: none;
+}
+
+#tabs > nav > button.active,
+#tabs > div > div.active {
+    display: block;
+}
+
+#tabs > nav > button.active {
+    background-color: lightblue;
+}

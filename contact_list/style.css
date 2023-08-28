@@ -1,0 +1,26 @@
+.editBtn, .saveBtn, .deleteBtn {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.editBtn {
+    background-color: #ffc107;
+}
+
+.deleteBtn {
+    background-color: #ff4b5c;
+}
+
+.table-footer {
+    text-align: center;
+}
+
+.form-input {
+    width: 100px;
+}
+
+.form-input.invalid {
+    border-color: red;
+}
